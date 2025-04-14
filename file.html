@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forma'Sint</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-bar-container">
+        <div class="top-bar-content">
+          <div class="top-bar-x">
+            <div class="idomods">
+              <div class="label-forma">
+                <div class="forma-icon">
+                  <img
+                    class="default-icon"
+                    src="./images/FORMA ICON.svg"
+                    alt="Forma Icon"
+                  />
+                  <img
+                    class="hover-icon"
+                    src="./images/FORMA ICON=Fill.svg"
+                    alt="Forma Icon Hover"
+                  />
+                </div>
+                <div class="forma-text">Forma’sint.</div>
+              </div>
+              <div class="idomods-text">idomods&lt;/&gt;</div>
+            </div>
+          </div>
+          <div class="navi">
+            <a class="nav-item" href="#home">Home</a>
+            <a class="nav-item" href="#featured-products">Featured products</a>
+            <a class="nav-item" href="#product-listing">Products listing</a>
+          </div>
+
+          <div class="navi-x">
+            <div class="frontend-dev">
+              <div class="icon-user">
+                <img src="./images/menu-person-icon.svg" alt="Forma Icon" />
+              </div>
+              <div class="frontend-dev-text">Frontend developer</div>
+            </div>
+          </div>
+          <div class="menu-button" id="open-menu">
+            <img src="./images/ICONS.svg" alt="Menu Icon" class="icon-user" />
+            <div class="menu-text">Menu</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="hero-section" id="home">
+      <div class="content">
+        <section class="logo-photo-container">
+          <div class="logo-container">
+            <img class="logo-forma" src="./images/LOGO FORMA.svg" alt="logo" />
+          </div>
+          <img
+            id="responsive-hero"
+            class="hero-photo"
+            src="images/HERO PHOTO.png"
+            alt="hiker"
+          />
+        </section>
+      </div>
+    </section>
+    <!-- featured products -->
+    <section class="featured-products-section" id="featured-products">
+      <div class="featured-products-container">
+        <div class="featured-header">
+          <h2 class="featured-title">Featured Products</h2>
+          <div class="browse-featured">Browse featured</div>
+        </div>
+
+        <div class="products-slider">
+          <div class="infinity-scroll" onclick="scrollNext()">
+            <img src="/images/SLIDER_ARROW.svg" />
+          </div>
+          <div class="scroll-inner" id="scrollInner">
+            <div class="product-card">
+              <div class="card-frame">
+                <img
+                  src="images/BESTSELLER.svg"
+                  class="product-label-bestseller"
+                />
+                <div class="heart-icon">
+                  <img
+                    src="images/HEART ICON=Default.svg"
+                    class="default-heart-icon"
+                  />
+                  <img
+                    class="hover-heart-icon"
+                    src="./images/HEART ICON=Fill.svg"
+                    alt="Heart Icon Hover"
+                  />
+                </div>
+                <img
+                  src="./images/product_photo_01.png"
+                  alt="Dark blue alpine climbing jacket"
+                  class="product-image"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Dark blue alpine climbing jacket</h3>
+                <p class="product-price">€300,00 EUR</p>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card-frame">
+                <img
+                  src="images/LIMITED EDITION.svg"
+                  class="product-label-bestseller"
+                />
+                <div class="heart-icon">
+                  <img
+                    src="images/HEART ICON=Default.svg"
+                    class="default-heart-icon"
+                  />
+                  <img
+                    class="hover-heart-icon"
+                    src="./images/HEART ICON=Fill.svg"
+                    alt="Heart Icon Hover"
+                  />
+                </div>
+                <img
+                  src="./images/product_photo_02.png"
+                  alt="Orange helmet for alpine Toundra"
+                  class="product-image"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Orange helmet for alpine TOUNDRA</h3>
+                <p class="product-price">€300,00 EUR</p>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card-frame">
+                <div class="heart-icon">
+                  <img
+                    src="images/HEART ICON=Default.svg"
+                    class="default-heart-icon"
+                  />
+                  <img
+                    class="hover-heart-icon"
+                    src="./images/HEART ICON=Fill.svg"
+                    alt="Heart Icon Hover"
+                  />
+                </div>
+                <img
+                  src="./images/product_photo_03.png"
+                  alt="Grey alpine climbing jacket"
+                  class="product-image"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Grey alpine climbing jacket</h3>
+                <p class="product-price">€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="card-frame">
+                <img
+                  src="images/BESTSELLER.svg"
+                  class="product-label-bestseller"
+                />
+                <div class="heart-icon">
+                  <img
+                    src="images/HEART ICON=Default.svg"
+                    class="default-heart-icon"
+                  />
+                  <img
+                    class="hover-heart-icon"
+                    src="./images/HEART ICON=Fill.svg"
+                    alt="Heart Icon Hover"
+                  />
+                </div>
+                <img
+                  src="./images/product_photo_01.png"
+                  alt="Dark blue alpine climbing jacket"
+                  class="product-image"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Dark blue alpine climbing jacket</h3>
+                <p class="product-price">€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="card-frame">
+                <img
+                  src="images/LIMITED EDITION.svg"
+                  class="product-label-bestseller"
+                />
+                <div class="heart-icon">
+                  <img
+                    src="images/HEART ICON=Default.svg"
+                    class="default-heart-icon"
+                  />
+                  <img
+                    class="hover-heart-icon"
+                    src="./images/HEART ICON=Fill.svg"
+                    alt="Heart Icon Hover"
+                  />
+                </div>
+                <img
+                  src="./images/product_photo_02.png"
+                  alt="Orange helmet for alpine Toundra"
+                  class="product-image"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Orange helmet for alpine TOUNDRA</h3>
+                <p class="product-price">€300,00 EUR</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-navi">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </section>
+    <!-- product listing -->
+    <section class="product-listing-section" id="product-listing">
+      <div class="product-listing-container">
+        <div class="headline">
+          <div class="pagination">
+            <p class="text-number-products">number of products per page</p>
+            <div class="dropdown-container">
+              <select
+                id="quantity"
+                class="number-dropdown"
+                onmousedown="filterOptions(this)"
+              >
+                <option value="14" selected>14</option>
+                <option value="24">24</option>
+                <option value="36">36</option>
+              </select>
+              <img
+                class="dropdown-arrow"
+                src="images/DROPDOWN.svg"
+                alt="arrow icon"
+              />
+              <div class="dropdown-underline"></div>
+            </div>
+          </div>
+        </div>
+        <div class="products-listing-grid" id="products-listing-grid"></div>
+      </div>
+    </section>
+    <div id="popupBackground" class="popup-background">
+      <div class="popup-container">
+        <div class="popup-wrapper">
+          <div class="popup-heading">
+            <span class="popup-listing-id" id="popupId">id:01</span>
+            <span class="close-popup" id="popupClose"
+              ><img src="/images/CLOSE MENU.svg" alt=""><img src="images/CLOSE.svg"
+            /></span>
+          </div>
+          <img
+            class="popup-listing-img"
+            id="popupImage"
+            src="images/product_photo_02.png"
+            alt="Product"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- mobile menu -->
+    <div id="mobile-menu" class="menu-active hidden">
+      <div class="bg-shadow"></div>
+      <div class="hamburger-menu">
+        <div class="top-bar-container-mobile">
+          <div class="logo-small">
+            <img
+              class="default-icon"
+              src="./images/FORMA ICON.svg"
+              alt="Forma Icon"
+            />
+          </div>
+          <div id="menu-close-mobile">
+            <img
+              src="./images/CLOSE MENU.svg"
+              alt="Menu Icon"
+              class="icon-user"
+            />
+            <div id="text-close-menu">Close</div>
+          </div>
+        </div>
+        <nav class="menu-list">
+          <a href="#home">Home</a>
+          <a href="#featured-products">Featured Products</a>
+          <a href="#product-listing">Product Listing</a>
+        </nav>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
