@@ -14,17 +14,8 @@ closeMenuBtn.addEventListener("click", () => {
 const mobileMenuLinks = document.querySelectorAll(".menu-list a");
 
 mobileMenuLinks.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute("href");
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-      mobileMenu.classList.add("hidden");
-
-      targetSection.scrollIntoView({ behavior: "smooth" });
-    }
+  link.addEventListener("click", function () {
+    mobileMenu.classList.add("hidden");
   });
 });
 
@@ -45,22 +36,18 @@ updateHeroImage(mediaQuery);
 mediaQuery.addEventListener("change", updateHeroImage);
 
 const scrollInner = document.getElementById("scrollInner");
-let scrollIndex = 0;
-const cardWidth = 441 + 24;
-const totalCards = scrollInner.children.length;
 
 function scrollNext() {
-  scrollIndex = (scrollIndex + 1) % totalCards;
-  scrollInner.style.transition = "none";
-  scrollInner.appendChild(scrollInner.children[0]);
-  scrollInner.offsetHeight;
+  const card = scrollInner.querySelector(".product-card");
+  const cardWidth = card.offsetWidth + 24;
   scrollInner.style.transition = "transform 0.5s ease";
   scrollInner.style.transform = `translateX(-${cardWidth}px)`;
 
-  requestAnimationFrame(() => {
+  setTimeout(() => {
+    scrollInner.appendChild(scrollInner.children[0]);
     scrollInner.style.transition = "none";
     scrollInner.style.transform = "translateX(0)";
-  });
+  }, 500);
 }
 
 const originalOptions = [14, 24, 36];
