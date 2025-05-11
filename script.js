@@ -1,15 +1,20 @@
 const openMenuBtn = document.getElementById("open-menu");
 const closeMenuBtn = document.getElementById("menu-close-mobile");
 const mobileMenu = document.getElementById("mobile-menu");
+const bgShadow = document.querySelector('.bg-shadow')
 
 openMenuBtn.addEventListener("click", () => {
   mobileMenu.classList.remove("hidden");
+  mobileMenu.classList.add('menu-active')
 });
 
-closeMenuBtn.addEventListener("click", () => {
-  console.log("menu should hide");
-  mobileMenu.classList.add("hidden");
-});
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('menu-active');
+  mobileMenu.classList.add('hidden');
+}
+closeMenuBtn.addEventListener("click", closeMobileMenu);
+bgShadow.addEventListener('click', closeMobileMenu);
 
 const mobileMenuLinks = document.querySelectorAll(".menu-list a");
 
@@ -36,10 +41,34 @@ updateHeroImage(mediaQuery);
 mediaQuery.addEventListener("change", updateHeroImage);
 
 const scrollInner = document.getElementById("scrollInner");
+const scrollWrapper = document.querySelector(".scroll-wrapper");
+const progressBar = document.querySelector(".progress-bar");
+const sliderNavi = document.querySelector(".slider-navi");
+
+
+let productCards = [];
+let currentIndex = 0;
+const cardGap = 24;
+
+function updateProgressBar() {
+  productCards = scrollInner.querySelectorAll(".product-card");
+  const totalCards = productCards.length; // Całkowita liczba produktów
+  if (totalCards === 0) return;
+
+  const totalGapWidth = cardGap * (totalCards - 1);
+  const availableWidth = sliderNavi.offsetWidth - totalGapWidth;
+
+  const progressWidth = availableWidth / totalCards;
+  progressBar.style.width = `${progressWidth}px`;
+
+  const offset = currentIndex * (progressWidth + cardGap);
+  progressBar.style.transform = `translateX(${offset}px)`;
+}
 
 function scrollNext() {
   const card = scrollInner.querySelector(".product-card");
-  const cardWidth = card.offsetWidth + 24;
+  if (!card) return;
+  const cardWidth = card.offsetWidth + cardGap;
   scrollInner.style.transition = "transform 0.5s ease";
   scrollInner.style.transform = `translateX(-${cardWidth}px)`;
 
@@ -47,8 +76,21 @@ function scrollNext() {
     scrollInner.appendChild(scrollInner.children[0]);
     scrollInner.style.transition = "none";
     scrollInner.style.transform = "translateX(0)";
+
+     const totalCards = productCards.length;
+     currentIndex++;
+     if (currentIndex >= totalCards) {
+       currentIndex = 0;
+     }
+     updateProgressBar();
   }, 500);
 }
+
+updateProgressBar();
+
+window.addEventListener("resize", () => {
+  updateProgressBar();
+});
 
 const originalOptions = [14, 24, 36];
 
@@ -153,7 +195,9 @@ async function loadProducts() {
     console.error("Error loading products:", error);
     isLoading = false;
   }
-}
+};
+
+
 
 quantitySelect.addEventListener("change", () => {
   pageSize = parseInt(quantitySelect.value);
@@ -173,5 +217,34 @@ window.addEventListener("scroll", () => {
     loadProducts();
   }
 });
+
+function debounce(func, delay) {
+  let timeout;
+  return function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(func, delay)
+  }
+}
+
+function repositionBanner() {
+  const banner = grid.querySelector('.banner');
+  if (!banner) return;
+
+  const insertIndex = window.innerWidth < 1420 ? 4 : 5;
+  const currentIndex = Array.from(grid.children).indexOf(banner);
+
+  if (currentIndex === insertIndex) return;
+
+  grid.removeChild(banner);
+
+  const newPosition = grid.children[insertIndex]
+  if (newPosition) {
+    grid.insertBefore(banner, newPosition);
+  } else {
+    grid.appendChild(banner)
+  }
+}
+
+window.addEventListener('resize', debounce(repositionBanner, 200))
 
 loadProducts();
