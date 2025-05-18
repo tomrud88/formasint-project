@@ -1,28 +1,28 @@
 const openMenuBtn = document.getElementById("open-menu");
 const closeMenuBtn = document.getElementById("menu-close-mobile");
 const mobileMenu = document.getElementById("mobile-menu");
-const bgShadow = document.querySelector('.bg-shadow')
+const bgShadow = document.querySelector('.mobile-menu__overlay')
+const mobileMenuNav = document.querySelector('.mobile-menu__nav')
 
 openMenuBtn.addEventListener("click", () => {
-  mobileMenu.classList.remove("hidden");
-  mobileMenu.classList.add('menu-active')
+  mobileMenu.classList.remove("mobile-menu--hidden");
+  mobileMenu.classList.add('mobile-menu--active')
 });
 
 
 function closeMobileMenu() {
-  mobileMenu.classList.remove('menu-active');
-  mobileMenu.classList.add('hidden');
+  mobileMenu.classList.remove('mobile-menu--active');
+  mobileMenu.classList.add('mobile-menu--hidden');
 }
 closeMenuBtn.addEventListener("click", closeMobileMenu);
 bgShadow.addEventListener('click', closeMobileMenu);
 
-const mobileMenuLinks = document.querySelectorAll(".menu-list a");
-
-mobileMenuLinks.forEach((link) => {
-  link.addEventListener("click", function () {
-    mobileMenu.classList.add("hidden");
-  });
-});
+mobileMenuNav.addEventListener('click', (event) => {
+  const clickedElement = event.target;
+  if (clickedElement.classList.contains('mobile-menu__nav-item')) {
+    closeMobileMenu();
+  }
+})
 
 const heroImg = document.getElementById("responsive-hero");
 
@@ -30,9 +30,9 @@ const mediaQuery = window.matchMedia("(max-width: 768px)");
 
 function updateHeroImage(e) {
   if (e.matches) {
-    heroImg.src = "images/HERO PHOTO SMALL.png";
+    heroImg.src = "images/HERO PHOTO SMALL.webp";
   } else {
-    heroImg.src = "images/HERO PHOTO.png";
+    heroImg.src = "images/HERO PHOTO.webp";
   }
 }
 
@@ -41,9 +41,11 @@ updateHeroImage(mediaQuery);
 mediaQuery.addEventListener("change", updateHeroImage);
 
 const scrollInner = document.getElementById("scrollInner");
-const scrollWrapper = document.querySelector(".scroll-wrapper");
-const progressBar = document.querySelector(".progress-bar");
-const sliderNavi = document.querySelector(".slider-navi");
+const scrollWrapper = document.querySelector(
+  ".featured-products__scroll-wrapper"
+);
+const progressBar = document.querySelector(".featured-products__progress-bar");
+const sliderNavi = document.querySelector(".featured-products__slider-nav");
 
 
 let productCards = [];
@@ -51,7 +53,7 @@ let currentIndex = 0;
 const cardGap = 24;
 
 function updateProgressBar() {
-  productCards = scrollInner.querySelectorAll(".product-card");
+  productCards = scrollInner.querySelectorAll(".featured-products__card");
   const totalCards = productCards.length; // Całkowita liczba produktów
   if (totalCards === 0) return;
 
@@ -66,7 +68,7 @@ function updateProgressBar() {
 }
 
 function scrollNext() {
-  const card = scrollInner.querySelector(".product-card");
+  const card = scrollInner.querySelector(".featured-products__card");
   if (!card) return;
   const cardWidth = card.offsetWidth + cardGap;
   scrollInner.style.transition = "transform 0.5s ease";
@@ -121,13 +123,15 @@ let bannerInserted = false;
 
 function createProductCard(product) {
   const div = document.createElement("div");
-  div.className = "listing-card";
+  div.className = "product-listing__card";
   div.innerHTML = `
-       <div class="image-wrapper">
-        <span class="product-id">ID: ${product.id
+       <div class="product-listing__card-image-wrapper">
+        <span class="product-listing__product-id">ID: ${product.id
           .toString()
           .padStart(2, "0")}</span>
-        <img class="listing-img" src="${product.image}" alt="Product">
+        <img class="product-listing__image" src="${
+          product.image
+        }" alt="Product">
         </div>
       `;
   div.addEventListener("click", () => {
@@ -150,14 +154,14 @@ popupBackground.addEventListener("click", (e) => {
 
 function createBanner() {
   const banner = document.createElement("div");
-  banner.className = "banner";
+  banner.className = "product-listing__banner";
   banner.innerHTML = `
-        <div class='banner-content'>
-        <div class='banner-header'>
-        <h3 id='logo-banner' >FORMA'SINT.</h3>
-        <p id='title-banner' >You’ll look and feel like the champion.</p>
+        <div class='product-listing__banner-content'>
+        <div class='product-listing__banner-header'>
+        <h3 id='product-listing__banner-logo' >FORMA'SINT.</h3>
+        <p id='product-listing__banner-title' >You’ll look and feel like the champion.</p>
         </div>
-        <button><span class='btn-text'>Check this out</span><img src="images/RIGHT ARROW.svg" alt="arrow"></button>
+        <button class="product-listing__banner-button"><span class='product-listing__banner-button-text'>Check this out</span><img src="images/RIGHT ARROW.svg" alt="arrow"></button>
         </div>
       `;
   return banner;
@@ -227,7 +231,7 @@ function debounce(func, delay) {
 }
 
 function repositionBanner() {
-  const banner = grid.querySelector('.banner');
+  const banner = grid.querySelector('.product-listing__banner');
   if (!banner) return;
 
   const insertIndex = window.innerWidth < 1420 ? 4 : 5;

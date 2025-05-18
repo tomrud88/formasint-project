@@ -3,212 +3,242 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore top outdoor gear and climbing apparel from FORMA’SINT. Shop our latest featured products and collections." />
     <title>Forma'Sint</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   </head>
   <body>
-    <header>
-      <div class="top-bar-container">
-        <div class="top-bar-content">
-          <div class="top-bar-x">
-            <div class="idomods">
-              <div class="label-forma">
-                <div class="forma-icon">
-                  <img
-                    class="default-icon"
-                    src="./images/FORMA ICON.svg"
-                    alt="Forma Icon"
-                  />
-                  <img
-                    class="hover-icon"
-                    src="./images/FORMA ICON=Fill.svg"
-                    alt="Forma Icon Hover"
-                  />
-                </div>
-                <div class="forma-text">Forma’sint.</div>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__content">
+          <div class="header__brand">
+            <div class="header__logo">
+              <div class="header__icon">
+                <img
+                  class="header__icon--default"
+                  src="./images/FORMA ICON.svg"
+                  alt="Forma Icon"
+                />
+                <img
+                  class="header__icon--hover"
+                  src="./images/FORMA ICON=Fill.svg"
+                  alt="Forma Icon Hover"
+                />
               </div>
-              <div class="idomods-text">idomods&lt;/&gt;</div>
+              <h1 class="header__text">Forma’sint.</h1>
+            </div>
+            <span class="header__label">idomods&lt;/&gt;</span>
+          </div>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a class="header__nav-item" href="#home">Home</a>
+            <a class="header__nav-item" href="#featured-products"
+              >Featured products</a
+            >
+            <a class="header__nav-item" href="#product-listing"
+              >Products listing</a
+            >
+          </nav>
+          <div class="header__user-role">
+            <div class="header__user">
+              <img
+                class="header__user-icon"
+                src="./images/menu-person-icon.svg"
+                alt="User Icon"
+              />
+              <span class="header__user-text">Frontend developer</span>
             </div>
           </div>
-          <div class="navi">
-            <a class="nav-item" href="#home">Home</a>
-            <a class="nav-item" href="#featured-products">Featured products</a>
-            <a class="nav-item" href="#product-listing">Products listing</a>
-          </div>
-
-          <div class="navi-x">
-            <div class="frontend-dev">
-              <div class="icon-user">
-                <img src="./images/menu-person-icon.svg" alt="Forma Icon" />
-              </div>
-              <div class="frontend-dev-text">Frontend developer</div>
-            </div>
-          </div>
-          <div class="menu-button" id="open-menu">
-            <img src="./images/ICONS.svg" alt="Menu Icon" class="menu-icon" />
-            <div class="menu-text">Menu</div>
-          </div>
+          <button
+            class="header__menu-button"
+            id="open-menu"
+            aria-label="Open menu"
+          >
+            <img
+              src="./images/ICONS.svg"
+              alt="Menu Icon"
+              class="header__menu-icon"
+            />
+            <span class="header__menu-text">Menu</span>
+        </button>
         </div>
       </div>
     </header>
-    <section class="hero-section" id="home">
-      <div class="content">
-        <section class="logo-photo-container">
-          <div class="logo-container">
-            <img class="logo-forma" src="./images/LOGO FORMA.svg" alt="logo" />
+    <!-- hero -->
+    <main>
+    <section class="hero" id="home">
+      <div class="hero__content">
+        <div class="hero__media">
+          <div class="hero__logo-container">
+            <img class="hero__logo" src="./images/LOGO FORMA.svg" alt="logo" />
           </div>
           <img
             id="responsive-hero"
-            class="hero-photo"
-            src="images/HERO PHOTO.png"
+            class="hero__image"
+            src="images/HERO PHOTO.webp"
             alt="hiker"
           />
-        </section>
+        </div>
       </div>
     </section>
     <!-- featured products -->
-    <section class="featured-products-section" id="featured-products">
-      <div class="featured-products-container">
-        <div class="featured-header">
-          <h2 class="featured-title">Featured Products</h2>
-          <div class="browse-featured">Browse featured</div>
+    <section class="featured-products" id="featured-products">
+      <div class="featured-products__container">
+        <div class="featured-products__header">
+          <h2 class="featured-products__title">Featured Products</h2>
+          <div class="featured-products__subtitle">Browse featured</div>
         </div>
 
-        <div class="products-slider">
-          <div class="infinity-scroll" onclick="scrollNext()">
-            <img src="/images/SLIDER_ARROW.svg" />
+        <div class="featured-products__slider">
+          <div class="featured-products__slider-arrow" onclick="scrollNext()">
+            <img src="/images/SLIDER_ARROW.svg" alt="Next slide" />
           </div>
-          <div class="scroll-wrapper">
-            <div class="scroll-inner" id="scrollInner">
-              <div class="product-card">
-                <div class="card-frame">
+          <div class="featured-products__scroll-wrapper">
+            <div class="featured-products__scroll-inner" id="scrollInner">
+              <div class="featured-products__card">
+                <div class="featured-products__card-frame">
                   <img
                     src="images/BESTSELLER.svg"
-                    class="product-label-bestseller"
+                    class="featured-products__label"
+                    alt="BestSeller"
                   />
-                  <div class="heart-icon">
+                  <div class="featured-products__heart">
                     <img
                       src="images/HEART ICON=Default.svg"
-                      class="default-heart-icon"
+                      class="featured-products__heart-icon--default"
+                      alt="Heart icon default"
                     />
                     <img
-                      class="hover-heart-icon"
+                      class="featured-products__heart-icon--hover"
                       src="./images/HEART ICON=Fill.svg"
                       alt="Heart Icon Hover"
                     />
                   </div>
                   <img
-                    src="./images/product_photo_01.png"
+                    src="./images/product_photo_01.webp"
                     alt="Dark blue alpine climbing jacket"
-                    class="product-image"
+                    class="featured-products__image"
                   />
                 </div>
-                <div class="product-info">
-                  <h3 class="product-name">Dark blue alpine climbing jacket</h3>
-                  <p class="product-price">€300,00 EUR</p>
+                <div class="featured-products__info">
+                  <h3 class="featured-products__name">
+                    Dark blue alpine climbing jacket
+                  </h3>
+                  <p class="featured-products__price">€300,00 EUR</p>
                 </div>
               </div>
-              <div class="product-card">
-                <div class="card-frame">
+              <div class="featured-products__card">
+                <div class="featured-products__card-frame">
                   <img
                     src="images/LIMITED EDITION.svg"
-                    class="product-label-bestseller"
+                    class="featured-products__label"
+                    alt="Limited edition"
                   />
-                  <div class="heart-icon">
+                  <div class="featured-products__heart">
                     <img
                       src="images/HEART ICON=Default.svg"
-                      class="default-heart-icon"
+                      class="featured-products__heart-icon--default"
+                      alt="Heart icon default"
                     />
                     <img
-                      class="hover-heart-icon"
+                      class="featured-products__heart-icon--hover"
                       src="./images/HEART ICON=Fill.svg"
                       alt="Heart Icon Hover"
                     />
                   </div>
                   <img
-                    src="./images/product_photo_02.png"
+                    src="./images/product_photo_02.webp"
                     alt="Orange helmet for alpine Toundra"
-                    class="product-image"
+                    class="featured-products__image"
                   />
                 </div>
-                <div class="product-info">
-                  <h3 class="product-name">Orange helmet for alpine TOUNDRA</h3>
-                  <p class="product-price">€300,00 EUR</p>
+                <div class="featured-products__info">
+                  <h3 class="featured-products__name">
+                    Orange helmet for alpine TOUNDRA
+                  </h3>
+                  <p class="featured-products__price">€300,00 EUR</p>
                 </div>
               </div>
-              <div class="product-card">
-                <div class="card-frame">
-                  <div class="heart-icon">
+              <div class="featured-products__card">
+                <div class="featured-products__card-frame">
+                  <div class="featured-products__heart">
                     <img
                       src="images/HEART ICON=Default.svg"
-                      class="default-heart-icon"
+                      class="featured-products__heart-icon--default"
+                      alt="Heart icon default"
                     />
                     <img
-                      class="hover-heart-icon"
+                      class="featured-products__heart-icon--hover"
                       src="./images/HEART ICON=Fill.svg"
                       alt="Heart Icon Hover"
                     />
                   </div>
                   <img
-                    src="./images/product_photo_03.png"
+                    src="./images/product_photo_03.webp"
                     alt="Grey alpine climbing jacket"
-                    class="product-image"
+                    class="featured-products__image"
                   />
                 </div>
-                <div class="product-info">
-                  <h3 class="product-name">Grey alpine climbing jacket</h3>
-                  <p class="product-price">€300,00 EUR</p>
+                <div class="featured-products__info">
+                  <h3 class="featured-products__name">
+                    Grey alpine climbing jacket
+                  </h3>
+                  <p class="featured-products__price">€300,00 EUR</p>
                 </div>
               </div>
-              <div class="product-card">
-                <div class="card-frame">
+              <div class="featured-products__card">
+                <div class="featured-products__card-frame">
                   <img
                     src="images/BESTSELLER.svg"
-                    class="product-label-bestseller"
+                    class="featured-products__label"
+                    alt="BestSeller"
                   />
-                  <div class="heart-icon">
+                  <div class="featured-products__heart">
                     <img
                       src="images/HEART ICON=Default.svg"
-                      class="default-heart-icon"
+                      class="featured-products__heart-icon--default"
+                      alt="Heart icon default"
                     />
                     <img
-                      class="hover-heart-icon"
+                      class="featured-products__heart-icon--hover"
                       src="./images/HEART ICON=Fill.svg"
                       alt="Heart Icon Hover"
                     />
                   </div>
                   <img
-                    src="./images/product_photo_01.png"
+                    src="./images/product_photo_01.webp"
                     alt="Dark blue alpine climbing jacket"
-                    class="product-image"
+                    class="featured-products__image"
                   />
                 </div>
-                <div class="product-info">
-                  <h3 class="product-name">Dark blue alpine climbing jacket</h3>
-                  <p class="product-price">€300,00 EUR</p>
+                <div class="featured-products__info">
+                  <h3 class="featured-products__name">
+                    Dark blue alpine climbing jacket
+                  </h3>
+                  <p class="featured-products__price">€300,00 EUR</p>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
-        <div class="slider-navi">
-          <div class="progress-bar"></div>
+        <div class="featured-products__slider-nav">
+          <div class="featured-products__progress-bar"></div>
         </div>
       </div>
     </section>
     <!-- product listing -->
-    <section class="product-listing-section" id="product-listing">
-      <div class="product-listing-container">
-        <div class="headline">
-          <div class="pagination">
-            <p class="text-number-products">number of products per page</p>
-            <div class="dropdown-container">
+    <section class="product-listing" id="product-listing">
+      <div class="product-listing__container">
+        <div class="product-listing__header">
+          <div class="product-listing__pagination">
+            <label for="quantity" class="product-listing__pagination-label">
+              Number of products per page
+            </label>
+            <div class="product-listing__dropdown">
               <select
                 id="quantity"
-                class="number-dropdown"
+                class="product-listing__dropdown-select"
                 onmousedown="filterOptions(this)"
               >
                 <option value="14" selected>14</option>
@@ -216,61 +246,75 @@
                 <option value="36">36</option>
               </select>
               <img
-                class="dropdown-arrow"
+                class="product-listing__dropdown-icon"
                 src="images/DROPDOWN.svg"
-                alt="arrow icon"
+                alt="Arrow icon"
               />
-              <div class="dropdown-underline"></div>
+              <div class="product-listing__dropdown-underline"></div>
             </div>
           </div>
         </div>
-        <div class="products-listing-grid" id="products-listing-grid"></div>
+        <div class="product-listing__grid" id="products-listing-grid"></div>
       </div>
     </section>
-    <div id="popupBackground" class="popup-background">
-      <div class="popup-container">
-        <div class="popup-wrapper">
-          <div class="popup-heading">
-            <span class="popup-listing-id" id="popupId">id:01</span>
-            <span class="close-popup" id="popupClose"
-              ><img src="/images/CLOSE MENU.svg" alt="" /><img
-                src="images/CLOSE.svg"
-            /></span>
+    </main>
+    <!-- popup -->
+    <div id="popupBackground" class="popup" role="dialog" aria-modal="true">
+      <div class="popup__container">
+        <div class="popup__wrapper">
+          <div class="popup__header">
+            <span class="popup__product-id" id="popupId">ID: 01</span>
+
+            <button class="popup__close" id="popupClose" aria-label="Close popup">
+              <img src="/images/CLOSE MENU.svg" alt="Close icon default" />
+              <img src="images/CLOSE.svg" alt="Close icon hover" />
+            </button>
           </div>
+
           <img
-            class="popup-listing-img"
+            class="popup__image"
             id="popupImage"
-            src="images/product_photo_02.png"
+            src="images/product_photo_02.webp"
             alt="Product"
           />
         </div>
       </div>
     </div>
     <!-- mobile menu -->
-    <div id="mobile-menu" class="menu-active hidden">
-      <div class="bg-shadow"></div>
-      <div class="hamburger-menu">
-        <div class="top-bar-container-mobile">
-          <div class="logo-small">
+    <div id="mobile-menu" class="mobile-menu mobile-menu--hidden">
+      <div class="mobile-menu__overlay"></div>
+      <div class="mobile-menu__panel">
+        <div class="mobile-menu__header">
+          <div class="mobile-menu__logo">
             <img
-              class="default-icon"
+              class="mobile-menu__icon"
               src="./images/FORMA ICON.svg"
               alt="Forma Icon"
             />
           </div>
-          <div id="menu-close-mobile">
+          <div
+            class="mobile-menu__close"
+            id="menu-close-mobile"
+            aria-label="Close mobile menu"
+          >
             <img
               src="./images/CLOSE MENU.svg"
-              alt="Menu Icon"
-              class="icon-close"
+              alt="Close icon"
+              class="mobile-menu__close-icon"
             />
-            <div id="text-close-menu">Close</div>
+            <span class="mobile-menu__close-text" id="text-close-menu"
+              >Close</span
+            >
           </div>
         </div>
-        <nav class="menu-list">
-          <a href="#home">Home</a>
-          <a href="#featured-products">Featured Products</a>
-          <a href="#product-listing">Product Listing</a>
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <a class="mobile-menu__nav-item" href="#home">Home</a>
+          <a class="mobile-menu__nav-item" href="#featured-products"
+            >Featured Products</a
+          >
+          <a class="mobile-menu__nav-item" href="#product-listing"
+            >Product Listing</a
+          >
         </nav>
       </div>
     </div>
